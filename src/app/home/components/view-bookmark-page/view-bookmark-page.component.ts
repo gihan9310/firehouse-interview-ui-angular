@@ -50,6 +50,10 @@ export class ViewBookmarkPageComponent implements OnInit {
     })
   }
 
+  resetForm(){
+    this.bookmarkForm.reset();
+  }
+
   getAllBookMarks() {
     this.bookmarksService.getAllBookmarks().subscribe(res => {
       if (res) {
