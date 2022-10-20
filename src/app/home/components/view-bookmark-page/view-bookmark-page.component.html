@@ -1,0 +1,103 @@
+
+
+<h1>Manage Bookmark</h1>
+
+<div class="container text-center">
+  <form [formGroup]="bookmarkForm">
+  <div class="row">
+
+    <div class="col-6">
+      <div class="form-floating mb-3">
+        <input formControlName="bookmarkId" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">BookMark Id</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input formControlName="name" type="email" class="form-control" id="name" placeholder="name@example.com">
+        <label for="floatingInput">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input formControlName="url" type="email" class="form-control" id="url" placeholder="name@example.com">
+        <label for="floatingInput">Url</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input formControlName="featured" type="email" class="form-control" id="featured" placeholder="name@example.com">
+        <label for="floatingInput">Featured</label>
+      </div>
+    </div>
+
+    <div class="col-6">
+<!--      <div class="form-floating mb-3">-->
+<!--        <input formControlName="description" type="email" class="form-control" id="description" placeholder="name@example.com">-->
+<!--        <label for="floatingInput">Description</label>-->
+<!--      </div>-->
+
+      <div class="form-floating">
+        <textarea formControlName="description"  class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Description</label>
+      </div>
+      <br>
+      <div class="form-floating mb-3">
+        <input formControlName="status" type="email" class="form-control" id="status" placeholder="name@example.com">
+        <label for="floatingInput">Status</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input formControlName="expiryDate" type="email" class="form-control" id="expiryDate" placeholder="name@example.com">
+        <label for="floatingInput">expiryDates</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input formControlName="image" type="email" class="form-control" id="image" placeholder="name@example.com">
+        <label for="floatingInput">image</label>
+      </div>
+
+    </div>
+    <div class="form-floating mb-3">
+      <button (click)="updateData()" type="button" class="btn btn-primary">Update</button>
+    </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Bookmark Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">url</th>
+<!--          <th scope="col">Description</th>-->
+          <th scope="col">status</th>
+<!--          <th scope="col">Expiry Date</th>-->
+<!--          <th scope="col">User Id</th>-->
+<!--          <th scope="col">Featured</th>-->
+          <th scope="col">image</th>
+<!--          <th scope="col">created At</th>-->
+          <th scope="col">option</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of listOfBookmark" (click)="slectedRow(item)">
+          <td>{{item.bookmarkId}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.url}}</td>
+<!--          <td>{{item.description}}</td>-->
+          <td>{{item.status}}</td>
+<!--          <td>{{item.expiryDate}}</td>-->
+<!--          <td>{{item.userId}}</td>-->
+<!--          <td>{{item.featured}}</td>-->
+          <td>{{item.image}}</td>
+<!--          <td>{{item.createdAt}}</td>-->
+          <td><button (click)="deleteRow(item)" type="button"class="btn btn-danger">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+</div>
+
+
+  </form>
+
+</div>
